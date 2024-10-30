@@ -15,13 +15,14 @@ public class RespostaListaExercicio {
 	/**
 	 * Método deve calcular o IMC utilizando peso e altura. Como resultado
 	 * o método deve retornar uma variável resultado do tipo float.
-	 * @param peso
-	 * @param altura
-	 * @return resultado
-	 */
+	 **/
+	 
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		float resultado;
+		
+		resultado = peso/(altura * altura);
+		return resultado;
 	}
 	
 	/**
@@ -34,7 +35,11 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		float resposta;
+		
+		resposta = ((baseMaior + baseMenor)* altura)/2;
+		
+		return resposta;
 	}
 	
 	/**
@@ -47,7 +52,14 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		float resultado;
+		
+	      if (a > b) {
+	            return a;
+	        } else {
+	            return b;
+	        }
+		
 	}
 	
 	/**
@@ -57,8 +69,12 @@ public class RespostaListaExercicio {
 	 * @param numero
 	 * @return condicao
 	 */
-	public static boolean verificarParImpar(int numero) 
-	{
+	public static boolean verificarParImpar(int numero) {
+		
+
+        if (numero % 2 == 0) {
+		
+        }
 		return false;		
 	}
 	
@@ -70,7 +86,15 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaNotas(float[] notas) {
 		return 0f;
-	}
+		
+	        float soma = 0f;
+	        for (float nota : notas) {
+	            soma += nota;
+	        }
+	        
+	        float media = soma / notas.length;
+	        return media;
+	    }
 	
 	/**
 	 * Método imprime array de inteiros no sentido inverso, separando os elementos por vírgula.
@@ -81,18 +105,17 @@ public class RespostaListaExercicio {
 	public static void imprimirArrayInverso(int[] array)
 	{
 		System.out.print("");
-	}
+		
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i]);
+            if (i > 0) {
+                System.out.print(", ");
+            }
+        }
+    }
 	
 	/**
-	 * Método deve imprimir os elementos primos de um array de inteiros. O formato da impressão 
-	 * deve ser feito numa única linha, utilizando espaço em branco (" ") entre os elementos e 
-	 * após o último elemento. Utilize System.out.print()
-	 * @param array
-	 */
-	public static void imprimirElementosPrimos(int[] array) 
-	{
-		System.out.print("");
-	}
+	
 	
 	
 	/**
@@ -103,6 +126,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
+		for (int num : array) {
+            if (num % 2 != 0) {
+                System.out.print(num + " ");
+            }
+		}
 		System.out.print("");
 	}
 	
@@ -115,6 +143,10 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
+		 for (int num : array) {
+	            if (num % 2 == 0) {
+	            }
+	            }
 		System.out.print("");
 	}
 	
@@ -127,6 +159,21 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
+	     if (array == null || array.length == 0) {
+	            System.out.print("Array vazio ou nulo.");
+	            return; 	        }
+
+	        int maior = array[0];
+	        int menor = array[0];
+
+	        for (int num : array) {
+	            if (num > maior) {
+	                maior = num;
+	            }
+	            if (num < menor) {
+	                menor = num;
+	            }
+	           }
 		System.out.print("");
 	}
 	
